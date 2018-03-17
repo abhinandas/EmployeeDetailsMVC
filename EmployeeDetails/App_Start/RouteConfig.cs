@@ -19,6 +19,12 @@ namespace EmployeeDetails
             //    new { controller = "Employee", action = "GetEmployee", id = UrlParameter.Optional }
             //    );
 
+            //routes.MapRoute(
+            //    "Employee",
+            //    "Employee/{id}",
+            //    new { controller = "Employee", action = "GetEmployee", id = "" }
+            //    );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

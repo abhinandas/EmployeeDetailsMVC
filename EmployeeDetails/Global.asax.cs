@@ -14,6 +14,7 @@ namespace EmployeeDetails
         protected void Application_Start()
         {
             //Database.SetInitializer<>
+            Database.SetInitializer<EmployeeDetails.Models.SalesEmp>(null);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

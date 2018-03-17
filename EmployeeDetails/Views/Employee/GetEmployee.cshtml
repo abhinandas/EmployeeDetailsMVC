@@ -2,36 +2,49 @@
 @using EmployeeDetails.Models
 @model EmployeeViewModel
 
+<html>
+<head>
+    <title>
 
-<h2>Hello @Model.UserName</h2>
-<div>
-    <table>
+    </title>
 
-        <tr>
-            <th>
-                Employee ID
-            </th>
-            <th>
-                Employee Name
-            </th>
-            <th>
-                Salary
-            </th>
-            <th>
-                Gender
-            </th>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div>
+        <table>
 
-        </tr>
-        @foreach (Employee item in Model.Employees)
-        {
             <tr>
-                <td>@item.EmployeeID</td>
-                <td>@item.EmployeName</td>
-                <td>@item.Salary</td>
-                <td>@item.Gender</td>
+                <th>
+                    Employee ID
+                </th>
+                <th>
+                    Employee Name
+                </th>
+                <th>
+                    Salary
+                </th>
+                <th>
+                    Gender
+                </th>
+
             </tr>
-        }
-    </table>
+            @foreach (Employee item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.EmployeeID</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.Salary</td>
+                    <td>@item.Gender</td>
+                </tr>
+            }
+        </table>
 
+        @Html.ActionLink("Create Employee", "CreateEmployee")
 
-</div>
+    </div>
+</body>
+</html>

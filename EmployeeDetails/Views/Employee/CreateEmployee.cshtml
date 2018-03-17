@@ -1,0 +1,65 @@
+﻿@using EmployeeDetails.Models
+@model Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Create Employee
+    </title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+        function formReset() {
+            $('[id$=txtEmployeeName]').val('');
+            $('[id$=txtSalary]').val('');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        @*<form action="/Employee/SaveEmployee" method="post">
+                <span>Employee Name :</span>
+                <input type="text" id="txtEmployeeName" name="EmployeeName" value="" />
+                <br />
+                <span>Salary :</span>
+                <input type="text" id="txtSalary" name="Salary" value="" />
+                <br />
+                <span> Male :</span>
+                <input type="radio" name="gender" id="rdMale" value="Male" />
+            </form>*@
+        @using (Html.BeginForm("SaveEmployee", "Employee", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(c => c.EmployeeName) :
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.EmployeeName, new { id = "txtEmployeeName" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(c => c.Salary) :
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Salary, new { id = "txtSalary" })
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <input type="submit" value="Save" name="btnSave" />
+            <input type="button" value="Cancel" name="btncancel" />
+            <input type="button" value="Clear" name="btnClear" onclick="formReset()"/>
+        }
+
+    </div>
+</body>
+</html>
+

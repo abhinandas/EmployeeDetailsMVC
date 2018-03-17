@@ -19,8 +19,19 @@ namespace EmployeeDetails.Controllers
             List<Employee> lst = new List<Employee>();
             lst = empbl.GetEmployees();
             employee.Employees = lst;
-            employee.UserName = "Abhi";
             return View(employee);
+        }
+
+        // POST : Add Employee
+
+        public ActionResult CreateEmployee()
+        {
+            return View("CreateEmployee");
+        }
+
+        public string SaveEmployee(Employee employee)
+        {
+            return employee.EmployeeName + " - " + employee.Salary;
         }
     }
 }
